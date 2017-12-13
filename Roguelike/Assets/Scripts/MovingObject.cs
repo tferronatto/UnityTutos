@@ -13,7 +13,7 @@ public abstract class MovingObject : MonoBehaviour {
 
 	// Use this for initialization
 	protected virtual void Start () {
-		boxCollider = GetComponent<BoxCollider2D.Destroy();
+		boxCollider = GetComponent<BoxCollider2D>();
 		rb2D = GetComponent<Rigidbody2D>();
 		inverseMoveTime = 1f/moveTime;
 	}
