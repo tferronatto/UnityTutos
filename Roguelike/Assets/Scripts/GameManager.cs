@@ -13,12 +13,12 @@ public class GameManager : MonoBehaviour {
 	public int playerFoodPoints = 100;
 	[HideInInspector] public bool playersTurn = true;
 
-	public int level = 1;
+	private int level = 0;
 	private Text levelText;
 	private GameObject levelImage;
 	private List<Enemy> enemies;
 	private bool enemiesMoving;
-	private bool doingSetup;
+	private bool doingSetup = true;
 
 	// Use this for initialization
 	void Awake () {
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
 		DontDestroyOnLoad(gameObject);
 		enemies = new List<Enemy>();
 		boardScript = GetComponent<BoardManager>();
-		InitGame();
+		//InitGame();
 	}
 
 	void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode){
