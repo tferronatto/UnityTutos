@@ -5,6 +5,8 @@ using UnityEngine;
 public class Enemy : MovingObject {
 
 	public int playerDamage;
+	public AudioClip enemyAttack1;
+	public AudioClip enemyAttack2;
 
 	private Animator animator;
 	private Transform target;	// stores the player position
@@ -43,6 +45,7 @@ public class Enemy : MovingObject {
 	protected override void OnCantMove <T> (T component){
 		Player hitPlayer =  component as Player;
 		animator.SetTrigger("enemyAttack");
+		SoundManager.instance.RandomizeSfx(enemyAttack1, enemyAttack2);
 		hitPlayer.LoseFood(playerDamage);
 	}
 }
